@@ -1,4 +1,3 @@
-
 // Get canvas for future use
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
@@ -9,7 +8,7 @@ var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAge
 
 /*
 
-	Define a function to make the game go fullscreen
+	Define reusable functions
 
 */
 
@@ -25,6 +24,20 @@ function launchIntoFullscreen(element) {
   }
 }
 
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function lineDistance(point1, point2)
+{
+	var xs = 0;
+	var ys = 0;
+	xs = point2.x - point1.x;
+	xs = xs * xs;
+	ys = point2.y - point1.y;
+	ys = ys * ys;
+	return Math.sqrt(xs + ys);
+}
 
 /*
 
@@ -85,11 +98,11 @@ var rightPaddle = {
 };
 
 
+/*
 
+	Setup the player and enemies objects
 
-function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+*/
 
 var player = {
 	x: getRandom(300, 400),
@@ -140,10 +153,20 @@ function spawnEnemies(num) {
 		current += 1;
 	}
 }
+
+// Spawn 10 enemies
 spawnEnemies(10);
+
+
+/*
+
+	Setup particles
+
+*/
 
 var particles = [
 ];
+
 function addParticle(x, y) {
 	x += (Math.random() - 0.5) * 10;
 	y += (Math.random() - 0.5) * 10;
@@ -153,16 +176,6 @@ function addParticle(x, y) {
 var upgrades = [
 ]
 
-function lineDistance(point1, point2)
-{
-	var xs = 0;
-	var ys = 0;
-	xs = point2.x - point1.x;
-	xs = xs * xs;
-	ys = point2.y - point1.y;
-	ys = ys * ys;
-	return Math.sqrt(xs + ys);
-}
 
 /*
 var i = 0;
@@ -202,8 +215,15 @@ function fireBullet(x, y, angle) {
 	}
 }
 
+/*
+
+	Setup trees
+
+*/
+
 var trees = [
 ]
+
 var i = 0;
 var x = 0;
 var y = 0;
@@ -217,6 +237,19 @@ while (i < treeNum) {
 	i += 1
 }
 
-// Set tutorial show time (seconds converted to ticks)
+/*
+
+	Setup the tutorial
+
+*/
+
 var tutorialTimeSec = 5;
 var tutorialTime = tutorialTimeSec * 60;
+
+/*
+
+	Setup the course
+
+*/
+
+var currentCourse = 1;

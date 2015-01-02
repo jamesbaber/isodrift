@@ -19,7 +19,8 @@ function render() {
 	
 	// Show the canvas
 	context.fillStyle = "#4F5257";
-	context.fillRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(imageGrass, 0, 0);
+	context.drawImage(imageCourses[currentCourse], 0, 0);
 	
 	// Draw logo at  the top
 	drawRotatedImage(imageLogo,  canvas.width / 2, 80, 0);
@@ -162,4 +163,17 @@ function render() {
 	if (tutorialTime <= 0) {
 		tutorialTime = 0;
 	}
+	
+	
+	
+	/*
+	function rgbToHex(r, g, b) {
+		return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+	}
+	var r = context.getImageData(player.x, player.y, 1, 1).data[0]
+	var g = context.getImageData(player.x, player.y, 1, 1).data[1]
+	var b = context.getImageData(player.x, player.y, 1, 1).data[2]
+	var hex = rgbToHex(r, g, b);
+	console.log(hex);
+	*/
 }
