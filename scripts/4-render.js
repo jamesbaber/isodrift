@@ -111,7 +111,7 @@ function render() {
 	// Draw fake 3D player
 	var height = 8;
 	if (framesPerSecond <= 30) {
-		height = 1;
+		height = 0;
 	}
 	var current = 0;
 	while (current <= height) {
