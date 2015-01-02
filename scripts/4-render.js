@@ -45,6 +45,7 @@ function render() {
 	drawRotatedImage(player.image, player.x, player.y, player.angle);
 	if (tutorialTime > 0) {
 		context.fillStyle = "#FFFFFF";
+		context.font = "bold 40px Century Gothic";
 		context.textAlign = "center";
 		context.fillText("This is you", player.x, player.y - 60);
 		if (mobile == true) {
@@ -89,6 +90,10 @@ function render() {
 	}
 	// Finally draw the FPS
 	context.fillText(framesPerSecond + " FPS", 10, 200);
+	if (framesPerSecond <= 30) {
+		context.font = "bold 15px Century Gothic";
+		context.fillText("Adjusted for bad performance", 10, 215);
+	}
 	
 	/*
 	
@@ -105,6 +110,9 @@ function render() {
 
 	// Draw fake 3D player
 	var height = 8;
+	if (framesPerSecond <= 30) {
+		height = 1;
+	}
 	var current = 0;
 	while (current <= height) {
 		drawRotatedImage(imagePointerLight, 60, 280 - current, player.angle);
