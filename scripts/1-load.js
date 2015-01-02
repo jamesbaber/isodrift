@@ -59,7 +59,7 @@ var num = 4;
 var current = 1;
 while (current <= num) {
 	imageShips[imageShips.length] = new Image();
-	imageShips[imageShips.length - 1].src = "resources/ship" + current + ".png"
+	imageShips[imageShips.length - 1].src = "resources/ships/ship" + current + ".png"
 	current += 1
 }
 
