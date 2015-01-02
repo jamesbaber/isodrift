@@ -1,0 +1,37 @@
+body {
+	background-color: #4F5257C;
+	font-family: "century gothic";
+}
+
+a:link { /* unvisited link */
+    color: #B5B5B5;
+}
+
+a:visited { /* visited link */
+    color: #B5B5B5;
+}
+
+a:hover { /* mouse over link */
+    color: #A8A8A8;
+}
+
+a:active { /* selected link */
+    color: #9C9C9C; 
+}
+
+/* to remove the top and left whitespace */
+* {
+	margin:0;
+	padding:0;
+}
+
+html, body {
+	width:100%;
+	height:100%;
+}
+
+canvas{
+	display: block;
+	height: 100%;
+	width: auto;
+}

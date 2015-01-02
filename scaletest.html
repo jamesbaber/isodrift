@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			canvas {
+				display: block;
+			}
+			
+			* {
+				margin:0;
+				padding:0;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width=1280 height=720>
+		</canvas>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		
+		<script>
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			
+			canvas.addEventListener('touchstart', touchManage, false);
+			canvas.addEventListener('touchmove', touchManage, false);
+			
+			canvas.addEventListener('touchend', function(e) {
+				touch = {x: -1, y: -1};
+			}, false);
+			
+			var touch = {
+				x: -1,
+				y: -1
+			}
+			
+			function touchManage(e) {
+				e.preventDefault();
+				touch.x = e.touches[0].clientX;
+				touch.y = e.touches[0].clientY;
+			}
+			
+			function render() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				context.fillStyle = "#000000";
+				context.fillRect(0, 0, canvas.width, canvas.height);
+
+				context.fillStyle = "#FFFFFF";
+				context.fillRect(touch.x - 4, touch.y - 4, touch.x + 4, touch.y + 4);
+			}
+			var  w = window, foundRequestAnimationFrame = w.requestAnimationFrame ||
+				w.webkitRequestAnimationFrame || w.msRequestAnimationFrame ||
+				w.mozRequestAnimationFrame    || w.oRequestAnimationFrame  ||
+				function(cb) {
+					setTimeout(cb,1000/60);
+				};
+
+			window.requestAnimationFrame  = foundRequestAnimationFrame ;
+
+			function run() {
+				render();
+				window.requestAnimationFrame(run);
+			}
+			run();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>IsoDrift</title>
+		<meta name="description" content="">
+		<meta charset="UTF-8">
+		<meta name="author" content="James Baber">
+		<meta name="keywords" content="JavaScript, CSS, HTML, HTML5">
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Google Analytics Code -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-58123038-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</head>
+	<body>
+		<!-- HTML5 Canvas for JavaScript game rendering -->
+		<center>
+			<!--<script>
+				function setupGame() {
+					var elem = document.getElementById("menu");
+					elem.parentNode.removeChild(elem);
+					launchIntoFullscreen(document.getElementById("canvas"));
+					
+					document.getElementById("game").style.visibility = "visible";
+				}
+			</script>
+			<div id="menu">
+				<!-- Launch game button, disappears when pressed -->
+				<!-- 
+				<button onclick="setupGame()">Launch Game</button>
+			</div>-->
+			<div id="game"><!-- style="visibility: hidden">-->
+				<canvas id="canvas" width=1280 height=720>
+					Your browser doesn't seem to support HTML5 canvases.
+					<br />
+					<a href="https://www.google.com/chrome/browser/desktop/index.html">
+						<img src="http://www.mpsaz.org/chrome/images/get_google_chrome_button_gray_wide_500.png">
+					</a>
+				</canvas>
+				
+				<!-- Load JavaScript scripts -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="scripts/1-load.js"></script>
+				<script src="scripts/2-setup.js"></script>
+				<script src="scripts/3-tick.js"></script>
+				<script src="scripts/4-render.js"></script>
+				<script src="scripts/5-loop.js"></script>
+			</div>
+				
+			<!-- GitHub follow button -->
+			<!--
+			<a class="github-button" href="https://github.com/jamesbaber" data-style="mega" data-count-href="/jamesbaber/followers" data-count-api="/users/jamesbaber#followers">Follow @jamesbaber</a>
+			-->
+				
+			<!-- Twitter follow button -->
+			<!--
+			<a href="https://twitter.com/stopmotionheavn" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @stopmotionheavn</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			-->
+			<!-- GitHub button script. Place after all buttons -->
+			<!--
+			<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+			-->
+		</center>
+	</body>
+</html>
