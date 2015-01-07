@@ -19,7 +19,7 @@ function render() {
 	
 	// Draw backgrounds
 	context.drawImage(imageBackground, 0, 0);
-	drawRotatedImage(imageBeta,  canvas.width / 2 - 120, 160, 0);
+	drawRotatedImage(imageBeta, canvas.width / 2 - 120, 160, 0);
 	
 	// Draw particles underneath everything else
 	for (i = 0; i < particles.length; i++) {
