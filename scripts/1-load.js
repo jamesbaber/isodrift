@@ -13,6 +13,9 @@ imageBullet.src = "resources/bullet.png"
 var imageLogo = new Image();
 imageLogo.src = "resources/logo.png"
 
+var imageBeta = new Image();
+imageBeta.src = "resources/beta.png"
+
 var imagePointer = new Image();
 imagePointer.src = "resources/pointer.png";
 
@@ -35,17 +38,8 @@ imagePaddle.src = "resources/paddle.png"
 
 */
 
-var imageGrass = new Image();
-imageGrass.src = "resources/grass.png"
-
-var imageCourses = [];
-var num = 2;
-var current = 1;
-while (current <= num) {
-	imageCourses[imageCourses.length] = new Image();
-	imageCourses[imageCourses.length - 1].src = "resources/courses/course" + current + ".png"
-	current += 1
-}
+var imageBackground = new Image();
+imageBackground.src = "resources/background.png"
 
 
 /*
@@ -72,4 +66,3 @@ while (current <= num) {
 
 //var audioX = new Audio("");
 //audioX.play();
-

@@ -17,13 +17,9 @@ function render() {
 	// Clear the canvas and make it transparent
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	
-	// Show the canvas
-	context.fillStyle = "#4F5257";
-	context.drawImage(imageGrass, 0, 0);
-	context.drawImage(imageCourses[currentCourse], 0, 0);
-	
-	// Draw logo at  the top
-	drawRotatedImage(imageLogo,  canvas.width / 2, 80, 0);
+	// Draw backgrounds
+	context.drawImage(imageBackground, 0, 0);
+	drawRotatedImage(imageBeta,  canvas.width / 2 - 120, 160, 0);
 	
 	// Draw particles underneath everything else
 	for (i = 0; i < particles.length; i++) {
@@ -45,7 +41,7 @@ function render() {
 	// Draw player
 	drawRotatedImage(player.image, player.x, player.y, player.angle);
 	if (tutorialTime > 0) {
-		context.fillStyle = "#FFFFFF";
+		context.fillStyle = "#000000";
 		context.font = "bold 40px Century Gothic";
 		context.textAlign = "center";
 		context.fillText("This is you", player.x, player.y - 60);
@@ -164,16 +160,6 @@ function render() {
 		tutorialTime = 0;
 	}
 	
-	
-	
-	/*
-	function rgbToHex(r, g, b) {
-		return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-	}
-	var r = context.getImageData(player.x, player.y, 1, 1).data[0]
-	var g = context.getImageData(player.x, player.y, 1, 1).data[1]
-	var b = context.getImageData(player.x, player.y, 1, 1).data[2]
-	var hex = rgbToHex(r, g, b);
-	console.log(hex);
-	*/
+	// Draw logo above everything else
+	drawRotatedImage(imageLogo, canvas.width / 2, 80, 0);
 }

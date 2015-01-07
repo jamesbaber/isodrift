@@ -39,6 +39,11 @@ function lineDistance(point1, point2)
 	return Math.sqrt(xs + ys);
 }
 
+function rgbToHex(r, g, b) {
+	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+
 /*
 
 	Input event management
@@ -128,7 +133,7 @@ function spawnEnemy(x, y, angle) {
 		var angle = getRandom(0, 360);
 	}
 	
-	// Work out which image to use, it cann't be the same as the player
+	// Work out which image to use, it can't be the same as the player
 	var img = player.image;
 	while (img == player.image) {
 		img = imageShips[getRandom(0, imageShips.length - 1)]
@@ -252,4 +257,5 @@ var tutorialTime = tutorialTimeSec * 60;
 
 */
 
-var currentCourse = 1;
+// 0-x
+var currentBackground = 0;
